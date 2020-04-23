@@ -84,7 +84,7 @@ public interface TrackSelection {
      */
     @Deprecated
     default TrackSelection createTrackSelection(
-        TrackGroup group, BandwidthMeter bandwidthMeter, int... tracks) {
+            TrackGroup group, BandwidthMeter bandwidthMeter, int... tracks) {
       throw new UnsupportedOperationException();
     }
 
@@ -98,7 +98,7 @@ public interface TrackSelection {
      */
     @SuppressWarnings("deprecation")
     default @NullableType TrackSelection[] createTrackSelections(
-        @NullableType Definition[] definitions, BandwidthMeter bandwidthMeter) {
+            @NullableType Definition[] definitions, BandwidthMeter bandwidthMeter) {
       return TrackSelectionUtil.createTrackSelectionsForDefinitions(
           definitions,
           definition -> createTrackSelection(definition.group, bandwidthMeter, definition.tracks));
@@ -219,7 +219,7 @@ public interface TrackSelection {
    */
   @Deprecated
   default void updateSelectedTrack(
-      long playbackPositionUs, long bufferedDurationUs, long availableDurationUs) {
+          long playbackPositionUs, long bufferedDurationUs, long availableDurationUs) {
     throw new UnsupportedOperationException();
   }
 
@@ -248,11 +248,11 @@ public interface TrackSelection {
    *     empty.
    */
   default void updateSelectedTrack(
-      long playbackPositionUs,
-      long bufferedDurationUs,
-      long availableDurationUs,
-      List<? extends MediaChunk> queue,
-      MediaChunkIterator[] mediaChunkIterators) {
+          long playbackPositionUs,
+          long bufferedDurationUs,
+          long availableDurationUs,
+          List<? extends MediaChunk> queue,
+          MediaChunkIterator[] mediaChunkIterators) {
     updateSelectedTrack(playbackPositionUs, bufferedDurationUs, availableDurationUs);
   }
 

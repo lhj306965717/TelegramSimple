@@ -42,11 +42,11 @@ public interface SsChunkSource extends ChunkSource {
      * @return The created {@link SsChunkSource}.
      */
     SsChunkSource createChunkSource(
-        LoaderErrorThrower manifestLoaderErrorThrower,
-        SsManifest manifest,
-        int streamElementIndex,
-        TrackSelection trackSelection,
-        @Nullable TransferListener transferListener);
+            LoaderErrorThrower manifestLoaderErrorThrower,
+            SsManifest manifest,
+            int streamElementIndex,
+            TrackSelection trackSelection,
+            @Nullable TransferListener transferListener);
   }
 
   /**

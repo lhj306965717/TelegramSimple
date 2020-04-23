@@ -186,10 +186,10 @@ public interface MediaSourceEventListener {
    * @param mediaLoadData The {@link MediaLoadData} defining the data being loaded.
    */
   void onLoadStarted(
-      int windowIndex,
-      @Nullable MediaPeriodId mediaPeriodId,
-      LoadEventInfo loadEventInfo,
-      MediaLoadData mediaLoadData);
+          int windowIndex,
+          @Nullable MediaPeriodId mediaPeriodId,
+          LoadEventInfo loadEventInfo,
+          MediaLoadData mediaLoadData);
 
   /**
    * Called when a load ends.
@@ -204,10 +204,10 @@ public interface MediaSourceEventListener {
    * @param mediaLoadData The {@link MediaLoadData} defining the data being loaded.
    */
   void onLoadCompleted(
-      int windowIndex,
-      @Nullable MediaPeriodId mediaPeriodId,
-      LoadEventInfo loadEventInfo,
-      MediaLoadData mediaLoadData);
+          int windowIndex,
+          @Nullable MediaPeriodId mediaPeriodId,
+          LoadEventInfo loadEventInfo,
+          MediaLoadData mediaLoadData);
 
   /**
    * Called when a load is canceled.
@@ -222,10 +222,10 @@ public interface MediaSourceEventListener {
    * @param mediaLoadData The {@link MediaLoadData} defining the data being loaded.
    */
   void onLoadCanceled(
-      int windowIndex,
-      @Nullable MediaPeriodId mediaPeriodId,
-      LoadEventInfo loadEventInfo,
-      MediaLoadData mediaLoadData);
+          int windowIndex,
+          @Nullable MediaPeriodId mediaPeriodId,
+          LoadEventInfo loadEventInfo,
+          MediaLoadData mediaLoadData);
 
   /**
    * Called when a load error occurs.
@@ -253,12 +253,12 @@ public interface MediaSourceEventListener {
    * @param wasCanceled Whether the load was canceled as a result of the error.
    */
   void onLoadError(
-      int windowIndex,
-      @Nullable MediaPeriodId mediaPeriodId,
-      LoadEventInfo loadEventInfo,
-      MediaLoadData mediaLoadData,
-      IOException error,
-      boolean wasCanceled);
+          int windowIndex,
+          @Nullable MediaPeriodId mediaPeriodId,
+          LoadEventInfo loadEventInfo,
+          MediaLoadData mediaLoadData,
+          IOException error,
+          boolean wasCanceled);
 
   /**
    * Called when a media period is first being read from.
@@ -277,7 +277,7 @@ public interface MediaSourceEventListener {
    * @param mediaLoadData The {@link MediaLoadData} defining the media being discarded.
    */
   void onUpstreamDiscarded(
-      int windowIndex, MediaPeriodId mediaPeriodId, MediaLoadData mediaLoadData);
+          int windowIndex, MediaPeriodId mediaPeriodId, MediaLoadData mediaLoadData);
 
   /**
    * Called when a downstream format change occurs (i.e. when the format of the media being read
@@ -288,7 +288,7 @@ public interface MediaSourceEventListener {
    * @param mediaLoadData The {@link MediaLoadData} defining the newly selected downstream data.
    */
   void onDownstreamFormatChanged(
-      int windowIndex, @Nullable MediaPeriodId mediaPeriodId, MediaLoadData mediaLoadData);
+          int windowIndex, @Nullable MediaPeriodId mediaPeriodId, MediaLoadData mediaLoadData);
 
   /** Dispatches events to {@link MediaSourceEventListener}s. */
   final class EventDispatcher {

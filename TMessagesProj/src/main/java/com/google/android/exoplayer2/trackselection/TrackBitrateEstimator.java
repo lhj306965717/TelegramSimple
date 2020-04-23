@@ -46,8 +46,8 @@ public interface TrackBitrateEstimator {
    *     Format#NO_VALUE}.
    */
   int[] getBitrates(
-      Format[] formats,
-      List<? extends MediaChunk> queue,
-      MediaChunkIterator[] iterators,
-      @Nullable int[] bitrates);
+          Format[] formats,
+          List<? extends MediaChunk> queue,
+          MediaChunkIterator[] iterators,
+          @Nullable int[] bitrates);
 }

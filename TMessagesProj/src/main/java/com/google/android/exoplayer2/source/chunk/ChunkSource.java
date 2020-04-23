@@ -76,10 +76,10 @@ public interface ChunkSource {
    * @param out A holder to populate.
    */
   void getNextChunk(
-      long playbackPositionUs,
-      long loadPositionUs,
-      List<? extends MediaChunk> queue,
-      ChunkHolder out);
+          long playbackPositionUs,
+          long loadPositionUs,
+          List<? extends MediaChunk> queue,
+          ChunkHolder out);
 
   /**
    * Called when the {@link ChunkSampleStream} has finished loading a chunk obtained from this

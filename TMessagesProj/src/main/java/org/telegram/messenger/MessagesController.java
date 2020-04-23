@@ -51,6 +51,11 @@ import java.util.Locale;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CountDownLatch;
 
+/**
+ * 消息控制器
+ * <p>
+ * 加载旧消息  或者  加载更新新消息
+ */
 public class MessagesController extends BaseController implements NotificationCenter.NotificationCenterDelegate {
 
     private ConcurrentHashMap<Integer, TLRPC.Chat> chats = new ConcurrentHashMap<>(100, 1.0f, 2);
@@ -352,6 +357,7 @@ public class MessagesController extends BaseController implements NotificationCe
     };
 
     private static volatile MessagesController[] Instance = new MessagesController[UserConfig.MAX_ACCOUNT_COUNT];
+
     public static MessagesController getInstance(int num) {
         MessagesController localInstance = Instance[num];
         if (localInstance == null) {
@@ -1358,7 +1364,7 @@ public class MessagesController extends BaseController implements NotificationCe
                         oldUser.photo = user.photo;
                         oldUser.flags |= 32;
                     } else {
-                        oldUser.flags = oldUser.flags &~ 32;
+                        oldUser.flags = oldUser.flags & ~32;
                         oldUser.photo = null;
                     }
                 }
@@ -1392,7 +1398,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     user.photo = oldUser.photo;
                     user.flags |= 32;
                 } else {
-                    user.flags = user.flags &~ 32;
+                    user.flags = user.flags & ~32;
                     user.photo = null;
                 }
                 users.put(user.id, user);
@@ -1456,7 +1462,7 @@ public class MessagesController extends BaseController implements NotificationCe
                         oldChat.username = chat.username;
                         oldChat.flags |= 64;
                     } else {
-                        oldChat.flags = oldChat.flags &~ 64;
+                        oldChat.flags = oldChat.flags & ~64;
                         oldChat.username = null;
                     }
                     if (chat.participants_count != 0) {
@@ -1483,19 +1489,19 @@ public class MessagesController extends BaseController implements NotificationCe
                     int newFlags2 = chat.default_banned_rights != null ? chat.default_banned_rights.flags : 0;
                     oldChat.default_banned_rights = chat.default_banned_rights;
                     if (oldChat.default_banned_rights == null) {
-                        oldChat.flags &=~ 262144;
+                        oldChat.flags &= ~262144;
                     } else {
                         oldChat.flags |= 262144;
                     }
                     oldChat.banned_rights = chat.banned_rights;
                     if (oldChat.banned_rights == null) {
-                        oldChat.flags &=~ 32768;
+                        oldChat.flags &= ~32768;
                     } else {
                         oldChat.flags |= 32768;
                     }
                     oldChat.admin_rights = chat.admin_rights;
                     if (oldChat.admin_rights == null) {
-                        oldChat.flags &=~ 16384;
+                        oldChat.flags &= ~16384;
                     } else {
                         oldChat.flags |= 16384;
                     }
@@ -1530,7 +1536,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     chat.username = oldChat.username;
                     chat.flags |= 64;
                 } else {
-                    chat.flags = chat.flags &~ 64;
+                    chat.flags = chat.flags & ~64;
                     chat.username = null;
                 }
                 if (oldChat.participants_count != 0 && chat.participants_count == 0) {
@@ -2078,7 +2084,7 @@ public class MessagesController extends BaseController implements NotificationCe
         SharedPreferences.Editor editor = notificationsPreferences.edit();
         boolean bar_hidden = !settings.report_spam && !settings.add_contact && !settings.block_contact && !settings.share_contact && !settings.report_geo;
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.d("peer settings loaded for " + dialogId + " add = " + settings.add_contact + " block = " + settings.block_contact + " spam = " + settings.report_spam + " share = " + settings.share_contact + " geo = " + settings.report_geo +  " hide = " + bar_hidden);
+            FileLog.d("peer settings loaded for " + dialogId + " add = " + settings.add_contact + " block = " + settings.block_contact + " spam = " + settings.report_spam + " share = " + settings.share_contact + " geo = " + settings.report_geo + " hide = " + bar_hidden);
         }
         editor.putInt("dialog_bar_vis3" + dialogId, bar_hidden ? 1 : 2);
         editor.putBoolean("dialog_bar_share" + dialogId, settings.share_contact);
@@ -5743,7 +5749,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     allDialogs.add(dialogs_dict.valueAt(a));
                 }
                 sortDialogs(migrate ? chatsDict : null);
-                
+
                 putAllNeededDraftDialogs();
 
                 if (loadType != DIALOGS_LOAD_TYPE_CHANNEL && loadType != DIALOGS_LOAD_TYPE_UNKNOWN) {
@@ -7218,6 +7224,7 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     private boolean gettingAppChangelog;
+
     public void generateUpdateMessage() {
         if (gettingAppChangelog || BuildVars.DEBUG_VERSION || SharedConfig.lastUpdateVersion == null || SharedConfig.lastUpdateVersion.equals(BuildVars.BUILD_VERSION_STRING)) {
             return;

@@ -337,7 +337,7 @@ public interface Player {
      * @param reason The {@link TimelineChangeReason} responsible for this timeline change.
      */
     default void onTimelineChanged(
-        Timeline timeline, @Nullable Object manifest, @TimelineChangeReason int reason) {}
+            Timeline timeline, @Nullable Object manifest, @TimelineChangeReason int reason) {}
 
     /**
      * Called when the available or selected tracks change.
@@ -347,7 +347,7 @@ public interface Player {
      *     length {@link #getRendererCount()}, but may contain null elements.
      */
     default void onTracksChanged(
-        TrackGroupArray trackGroups, TrackSelectionArray trackSelections) {}
+            TrackGroupArray trackGroups, TrackSelectionArray trackSelections) {}
 
     /**
      * Called when the player starts or stops loading the source.
@@ -371,7 +371,7 @@ public interface Player {
      * @param playbackSuppressionReason The current {@link PlaybackSuppressionReason}.
      */
     default void onPlaybackSuppressionReasonChanged(
-        @PlaybackSuppressionReason int playbackSuppressionReason) {}
+            @PlaybackSuppressionReason int playbackSuppressionReason) {}
 
     /**
      * Called when the value of {@link #isPlaying()} changes.
@@ -645,7 +645,7 @@ public interface Player {
 
   /**
    * Returns the error that caused playback to fail. This is the same error that will have been
-   * reported via {@link Player.EventListener#onPlayerError(ExoPlaybackException)} at the time of
+   * reported via {@link EventListener#onPlayerError(ExoPlaybackException)} at the time of
    * failure. It can be queried using this method until {@code stop(true)} is called or the player
    * is re-prepared.
    *

@@ -82,13 +82,13 @@ public interface HlsExtractorFactory {
    * @throws IOException If an I/O error is encountered while sniffing.
    */
   Result createExtractor(
-      Extractor previousExtractor,
-      Uri uri,
-      Format format,
-      List<Format> muxedCaptionFormats,
-      DrmInitData drmInitData,
-      TimestampAdjuster timestampAdjuster,
-      Map<String, List<String>> responseHeaders,
-      ExtractorInput sniffingExtractorInput)
+          Extractor previousExtractor,
+          Uri uri,
+          Format format,
+          List<Format> muxedCaptionFormats,
+          DrmInitData drmInitData,
+          TimestampAdjuster timestampAdjuster,
+          Map<String, List<String>> responseHeaders,
+          ExtractorInput sniffingExtractorInput)
       throws InterruptedException, IOException;
 }

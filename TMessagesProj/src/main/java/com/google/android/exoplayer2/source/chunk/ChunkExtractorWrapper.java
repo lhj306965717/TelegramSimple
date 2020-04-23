@@ -49,7 +49,7 @@ public final class ChunkExtractorWrapper implements ExtractorOutput {
      *
      * @param id A track identifier.
      * @param type The type of the track. Typically one of the
-     *     {@link com.google.android.exoplayer2.C} {@code TRACK_TYPE_*} constants.
+     *     {@link C} {@code TRACK_TYPE_*} constants.
      * @return The {@link TrackOutput} for the given track identifier.
      */
     TrackOutput track(int id, int type);
@@ -71,7 +71,7 @@ public final class ChunkExtractorWrapper implements ExtractorOutput {
   /**
    * @param extractor The extractor to wrap.
    * @param primaryTrackType The type of the primary track. Typically one of the
-   *     {@link com.google.android.exoplayer2.C} {@code TRACK_TYPE_*} constants.
+   *     {@link C} {@code TRACK_TYPE_*} constants.
    * @param primaryTrackManifestFormat A manifest defined {@link Format} whose data should be merged
    *     into any sample {@link Format} output from the {@link Extractor} for the primary track.
    */

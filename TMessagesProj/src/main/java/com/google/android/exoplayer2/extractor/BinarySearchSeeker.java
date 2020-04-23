@@ -56,7 +56,7 @@ public abstract class BinarySearchSeeker {
      * @throws InterruptedException If the thread was interrupted.
      */
     TimestampSearchResult searchForTimestamp(
-        ExtractorInput input, long targetTimestamp, OutputFrameHolder outputFrameHolder)
+            ExtractorInput input, long targetTimestamp, OutputFrameHolder outputFrameHolder)
         throws IOException, InterruptedException;
 
     /** Called when a seek operation finishes. */

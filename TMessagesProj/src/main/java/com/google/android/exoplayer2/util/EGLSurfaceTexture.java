@@ -256,7 +256,7 @@ public final class EGLSurfaceTexture implements SurfaceTexture.OnFrameAvailableL
     }
     EGLContext context =
         EGL14.eglCreateContext(
-            display, config, android.opengl.EGL14.EGL_NO_CONTEXT, glAttributes, 0);
+            display, config, EGL14.EGL_NO_CONTEXT, glAttributes, 0);
     if (context == null) {
       throw new GlException("eglCreateContext failed");
     }

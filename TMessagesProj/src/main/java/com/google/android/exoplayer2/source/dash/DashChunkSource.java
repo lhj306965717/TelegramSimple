@@ -50,17 +50,17 @@ public interface DashChunkSource extends ChunkSource {
      * @return The created {@link DashChunkSource}.
      */
     DashChunkSource createDashChunkSource(
-        LoaderErrorThrower manifestLoaderErrorThrower,
-        DashManifest manifest,
-        int periodIndex,
-        int[] adaptationSetIndices,
-        TrackSelection trackSelection,
-        int type,
-        long elapsedRealtimeOffsetMs,
-        boolean enableEventMessageTrack,
-        List<Format> closedCaptionFormats,
-        @Nullable PlayerTrackEmsgHandler playerEmsgHandler,
-        @Nullable TransferListener transferListener);
+            LoaderErrorThrower manifestLoaderErrorThrower,
+            DashManifest manifest,
+            int periodIndex,
+            int[] adaptationSetIndices,
+            TrackSelection trackSelection,
+            int type,
+            long elapsedRealtimeOffsetMs,
+            boolean enableEventMessageTrack,
+            List<Format> closedCaptionFormats,
+            @Nullable PlayerTrackEmsgHandler playerEmsgHandler,
+            @Nullable TransferListener transferListener);
   }
 
   /**

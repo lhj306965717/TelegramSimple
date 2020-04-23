@@ -1871,7 +1871,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                     if (selectedDialogs.isEmpty()) {
                         return;
                     }
-                    delegate.didSelectDialogs(DialogsActivity.this, selectedDialogs, message, false);
+                    delegate.didSelectDialogs(DialogsActivity.this, selectedDialogs, x, false);
                 }
 
                 @Override

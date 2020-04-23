@@ -346,8 +346,8 @@ public class DefaultRenderersFactory implements RenderersFactory {
       Constructor<?> constructor =
           clazz.getConstructor(
               long.class,
-              android.os.Handler.class,
-              com.google.android.exoplayer2.video.VideoRendererEventListener.class,
+              Handler.class,
+              VideoRendererEventListener.class,
               int.class);
       // LINT.ThenChange(../../../../../../../proguard-rules.txt)
       Renderer renderer =
@@ -423,9 +423,9 @@ public class DefaultRenderersFactory implements RenderersFactory {
       Class<?> clazz = Class.forName("com.google.android.exoplayer2.ext.opus.LibopusAudioRenderer");
       Constructor<?> constructor =
           clazz.getConstructor(
-              android.os.Handler.class,
-              com.google.android.exoplayer2.audio.AudioRendererEventListener.class,
-              com.google.android.exoplayer2.audio.AudioProcessor[].class);
+              Handler.class,
+              AudioRendererEventListener.class,
+              AudioProcessor[].class);
       // LINT.ThenChange(../../../../../../../proguard-rules.txt)
       Renderer renderer =
           (Renderer) constructor.newInstance(eventHandler, eventListener, audioProcessors);
@@ -444,9 +444,9 @@ public class DefaultRenderersFactory implements RenderersFactory {
       Class<?> clazz = Class.forName("com.google.android.exoplayer2.ext.flac.LibflacAudioRenderer");
       Constructor<?> constructor =
           clazz.getConstructor(
-              android.os.Handler.class,
-              com.google.android.exoplayer2.audio.AudioRendererEventListener.class,
-              com.google.android.exoplayer2.audio.AudioProcessor[].class);
+              Handler.class,
+              AudioRendererEventListener.class,
+              AudioProcessor[].class);
       // LINT.ThenChange(../../../../../../../proguard-rules.txt)
       Renderer renderer =
           (Renderer) constructor.newInstance(eventHandler, eventListener, audioProcessors);
@@ -466,9 +466,9 @@ public class DefaultRenderersFactory implements RenderersFactory {
           Class.forName("com.google.android.exoplayer2.ext.ffmpeg.FfmpegAudioRenderer");
       Constructor<?> constructor =
           clazz.getConstructor(
-              android.os.Handler.class,
-              com.google.android.exoplayer2.audio.AudioRendererEventListener.class,
-              com.google.android.exoplayer2.audio.AudioProcessor[].class);
+              Handler.class,
+              AudioRendererEventListener.class,
+              AudioProcessor[].class);
       // LINT.ThenChange(../../../../../../../proguard-rules.txt)
       Renderer renderer =
           (Renderer) constructor.newInstance(eventHandler, eventListener, audioProcessors);

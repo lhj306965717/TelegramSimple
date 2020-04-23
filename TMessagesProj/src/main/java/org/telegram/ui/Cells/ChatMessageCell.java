@@ -635,9 +635,9 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
 
         // 消息背景
         backgroundDrawable = new MessageBackgroundDrawable(this);
-        // 图片接收
+        // 头像图片接收
         avatarImage = new ImageReceiver();
-        // 设置图片圆角
+        // 头像设置图片圆角
         avatarImage.setRoundRadius(AndroidUtilities.dp(21));
         // 设置头像Drawable
         avatarDrawable = new AvatarDrawable();

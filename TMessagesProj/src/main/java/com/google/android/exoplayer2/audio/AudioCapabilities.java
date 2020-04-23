@@ -99,7 +99,7 @@ public final class AudioCapabilities {
    * <p>Applications should generally call {@link #getCapabilities(Context)} to obtain an instance
    * based on the capabilities advertised by the platform, rather than calling this constructor.
    *
-   * @param supportedEncodings Supported audio encodings from {@link android.media.AudioFormat}'s
+   * @param supportedEncodings Supported audio encodings from {@link AudioFormat}'s
    *     {@code ENCODING_*} constants. Passing {@code null} indicates that no encodings are
    *     supported.
    * @param maxChannelCount The maximum number of audio channels that can be played simultaneously.
@@ -117,7 +117,7 @@ public final class AudioCapabilities {
   /**
    * Returns whether this device supports playback of the specified audio {@code encoding}.
    *
-   * @param encoding One of {@link android.media.AudioFormat}'s {@code ENCODING_*} constants.
+   * @param encoding One of {@link AudioFormat}'s {@code ENCODING_*} constants.
    * @return Whether this device supports playback the specified audio {@code encoding}.
    */
   public boolean supportsEncoding(int encoding) {

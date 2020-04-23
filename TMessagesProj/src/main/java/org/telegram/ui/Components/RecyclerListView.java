@@ -48,6 +48,8 @@ import java.util.ArrayList;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.exoplayer2.util.Log;
+
 public class RecyclerListView extends RecyclerView {
 
     private OnItemClickListener onItemClickListener;
@@ -1414,6 +1416,7 @@ public class RecyclerListView extends RecyclerView {
     }
 
     private void positionSelector(int position, View sel) {
+        Log.e("TAG", "执行：positionSelector");
         positionSelector(position, sel, false, -1, -1);
     }
 

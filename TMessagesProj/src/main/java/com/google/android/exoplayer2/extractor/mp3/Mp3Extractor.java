@@ -296,7 +296,7 @@ public final class Mp3Extractor implements Extractor {
       // We need to parse enough ID3 metadata to retrieve any gapless/seeking playback information
       // even if ID3 metadata parsing is disabled.
       boolean parseAllId3Frames = (flags & FLAG_DISABLE_ID3_METADATA) == 0;
-      Id3Decoder.FramePredicate id3FramePredicate =
+      FramePredicate id3FramePredicate =
           parseAllId3Frames ? null : REQUIRED_ID3_FRAME_PREDICATE;
       metadata = id3Peeker.peekId3Data(input, id3FramePredicate);
       if (metadata != null) {

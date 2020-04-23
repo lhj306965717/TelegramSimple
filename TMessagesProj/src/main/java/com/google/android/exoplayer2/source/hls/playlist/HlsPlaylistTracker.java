@@ -48,9 +48,9 @@ public interface HlsPlaylistTracker {
      * @param playlistParserFactory The {@link HlsPlaylistParserFactory} for playlist parsing.
      */
     HlsPlaylistTracker createTracker(
-        HlsDataSourceFactory dataSourceFactory,
-        LoadErrorHandlingPolicy loadErrorHandlingPolicy,
-        HlsPlaylistParserFactory playlistParserFactory);
+            HlsDataSourceFactory dataSourceFactory,
+            LoadErrorHandlingPolicy loadErrorHandlingPolicy,
+            HlsPlaylistParserFactory playlistParserFactory);
   }
 
   /** Listener for primary playlist changes. */
@@ -127,7 +127,7 @@ public interface HlsPlaylistTracker {
    * @param listener A callback for the primary playlist change events.
    */
   void start(
-      Uri initialPlaylistUri, EventDispatcher eventDispatcher, PrimaryPlaylistListener listener);
+          Uri initialPlaylistUri, EventDispatcher eventDispatcher, PrimaryPlaylistListener listener);
 
   /**
    * Stops the playlist tracker and releases any acquired resources.

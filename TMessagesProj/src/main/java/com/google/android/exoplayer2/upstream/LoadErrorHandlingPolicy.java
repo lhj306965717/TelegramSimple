@@ -52,7 +52,7 @@ public interface LoadErrorHandlingPolicy {
    *     not be blacklisted.
    */
   long getBlacklistDurationMsFor(
-      int dataType, long loadDurationMs, IOException exception, int errorCount);
+          int dataType, long loadDurationMs, IOException exception, int errorCount);
 
   /**
    * Returns the number of milliseconds to wait before attempting the load again, or {@link

@@ -283,7 +283,7 @@ public class SimpleExoPlayer extends BasePlayer
    * Sets the video scaling mode.
    *
    * <p>Note that the scaling mode only applies if a {@link MediaCodec}-based video {@link Renderer}
-   * is enabled and if the output surface is owned by a {@link android.view.SurfaceView}.
+   * is enabled and if the output surface is owned by a {@link SurfaceView}.
    *
    * @param videoScalingMode The video scaling mode.
    */
@@ -870,13 +870,13 @@ public class SimpleExoPlayer extends BasePlayer
   }
 
   @Override
-  public void addListener(Player.EventListener listener) {
+  public void addListener(EventListener listener) {
     verifyApplicationThread();
     player.addListener(listener);
   }
 
   @Override
-  public void removeListener(Player.EventListener listener) {
+  public void removeListener(EventListener listener) {
     verifyApplicationThread();
     player.removeListener(listener);
   }
@@ -1269,7 +1269,7 @@ public class SimpleExoPlayer extends BasePlayer
           SurfaceHolder.Callback,
           TextureView.SurfaceTextureListener,
           AudioFocusManager.PlayerControl,
-          Player.EventListener {
+          EventListener {
 
     // VideoRendererEventListener implementation
 

@@ -67,11 +67,17 @@ import java.util.concurrent.TimeUnit;
 
 public class SendMessagesHelper extends BaseController implements NotificationCenter.NotificationCenterDelegate {
 
+    // 延时消息，比如删除记录什么的，会出现倒计时5s可撤回操作
     private HashMap<String, ArrayList<DelayedMessage>> delayedMessages = new HashMap<>();
+    // 未发送消息
     private SparseArray<MessageObject> unsentMessages = new SparseArray<>();
+    // 发送中消息
     private SparseArray<TLRPC.Message> sendingMessages = new SparseArray<>();
+    // 编辑中消息
     private SparseArray<TLRPC.Message> editingMessages = new SparseArray<>();
+    // 上传中消息
     private SparseArray<TLRPC.Message> uploadMessages = new SparseArray<>();
+
     private LongSparseArray<Integer> sendingMessagesIdDialogs = new LongSparseArray<>();
     private LongSparseArray<Integer> uploadingMessagesIdDialogs = new LongSparseArray<>();
     private HashMap<String, MessageObject> waitingForLocation = new HashMap<>();
@@ -132,6 +138,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
 
         public interface LocationProviderDelegate {
             void onLocationAcquired(Location location);
+
             void onUnableLocationAcquire();
         }
 
@@ -372,7 +379,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     processSentMessage(obj.getId());
                     removeFromUploadingMessages(obj.getId(), scheduled);
                 }
-                delayedMessages.remove( "group_" + groupId);
+                delayedMessages.remove("group_" + groupId);
             } else {
                 getMessagesStorage().markMessageAsSendError(obj.messageOwner, obj.scheduled);
                 obj.messageOwner.send_state = MessageObject.MESSAGE_SEND_STATE_SEND_ERROR;
@@ -385,6 +392,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     }
 
     private static volatile SendMessagesHelper[] Instance = new SendMessagesHelper[UserConfig.MAX_ACCOUNT_COUNT];
+
     public static SendMessagesHelper getInstance(int num) {
         SendMessagesHelper localInstance = Instance[num];
         if (localInstance == null) {
@@ -5519,7 +5527,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     bitmap = ImageLoader.loadBitmap(path, uri, 800, 800, true);
                 }
                 if (!bigExists) {
-                    TLRPC.PhotoSize size = ImageLoader.scaleAndSaveImage(bigSize, bitmap, AndroidUtilities.getPhotoSize(), AndroidUtilities.getPhotoSize(), 80, false, 101, 101,false);
+                    TLRPC.PhotoSize size = ImageLoader.scaleAndSaveImage(bigSize, bitmap, AndroidUtilities.getPhotoSize(), AndroidUtilities.getPhotoSize(), 80, false, 101, 101, false);
                     if (size != bigSize) {
                         photo.sizes.add(0, size);
                     }
@@ -5867,7 +5875,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             if (groupPhotosFinal) {
                                 photosCount++;
                                 params.put("groupId", "" + groupId);
-                                if (photosCount == 10 || a == count -1) {
+                                if (photosCount == 10 || a == count - 1) {
                                     params.put("final", "1");
                                     lastGroupId = 0;
                                 }
@@ -6007,7 +6015,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             if (!muted && groupPhotosFinal) {
                                 photosCount++;
                                 params.put("groupId", "" + groupId);
-                                if (photosCount == 10 || a == count -1) {
+                                if (photosCount == 10 || a == count - 1) {
                                     params.put("final", "1");
                                     lastGroupId = 0;
                                 }

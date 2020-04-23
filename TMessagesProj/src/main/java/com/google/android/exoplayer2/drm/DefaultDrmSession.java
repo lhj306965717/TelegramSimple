@@ -97,7 +97,7 @@ import org.checkerframework.checker.nullness.qual.RequiresNonNull;
   /* package */ final UUID uuid;
   /* package */ final PostResponseHandler postResponseHandler;
 
-  private @DrmSession.State int state;
+  private @State int state;
   private int openCount;
   private HandlerThread requestHandlerThread;
   private PostRequestHandler postRequestHandler;
@@ -237,7 +237,7 @@ import org.checkerframework.checker.nullness.qual.RequiresNonNull;
   // DrmSession implementation.
 
   @Override
-  @DrmSession.State
+  @State
   public final int getState() {
     return state;
   }

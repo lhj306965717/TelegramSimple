@@ -198,8 +198,8 @@ public final class DownloadRequest implements Parcelable {
     dest.writeByteArray(data);
   }
 
-  public static final Parcelable.Creator<DownloadRequest> CREATOR =
-      new Parcelable.Creator<DownloadRequest>() {
+  public static final Creator<DownloadRequest> CREATOR =
+      new Creator<DownloadRequest>() {
 
         @Override
         public DownloadRequest createFromParcel(Parcel in) {

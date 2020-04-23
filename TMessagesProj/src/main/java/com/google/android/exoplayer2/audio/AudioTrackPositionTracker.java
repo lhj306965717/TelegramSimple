@@ -57,10 +57,10 @@ import java.lang.reflect.Method;
      * @param playbackPositionUs The current playback head position in microseconds.
      */
     void onPositionFramesMismatch(
-        long audioTimestampPositionFrames,
-        long audioTimestampSystemTimeUs,
-        long systemTimeUs,
-        long playbackPositionUs);
+            long audioTimestampPositionFrames,
+            long audioTimestampSystemTimeUs,
+            long systemTimeUs,
+            long playbackPositionUs);
 
     /**
      * Called when the system time associated with the last known audio track timestamp is
@@ -74,10 +74,10 @@ import java.lang.reflect.Method;
      * @param playbackPositionUs The current playback head position in microseconds.
      */
     void onSystemTimeUsMismatch(
-        long audioTimestampPositionFrames,
-        long audioTimestampSystemTimeUs,
-        long systemTimeUs,
-        long playbackPositionUs);
+            long audioTimestampPositionFrames,
+            long audioTimestampSystemTimeUs,
+            long systemTimeUs,
+            long playbackPositionUs);
 
     /**
      * Called when the audio track has provided an invalid latency.

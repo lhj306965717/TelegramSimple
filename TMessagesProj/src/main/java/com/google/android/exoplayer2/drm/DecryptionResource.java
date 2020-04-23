@@ -37,7 +37,7 @@ public abstract class DecryptionResource<T extends DecryptionResource<T>> {
   }
 
   // TODO: Consider adding a handler on which the owner should be called.
-  private final DecryptionResource.Owner<T> owner;
+  private final Owner<T> owner;
   private int referenceCount;
 
   /**

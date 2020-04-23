@@ -131,11 +131,11 @@ public interface MediaPeriod extends SequenceableLoader {
    * @return The actual position at which the tracks were enabled, in microseconds.
    */
   long selectTracks(
-      @NullableType TrackSelection[] selections,
-      boolean[] mayRetainStreamFlags,
-      @NullableType SampleStream[] streams,
-      boolean[] streamResetFlags,
-      long positionUs);
+          @NullableType TrackSelection[] selections,
+          boolean[] mayRetainStreamFlags,
+          @NullableType SampleStream[] streams,
+          boolean[] streamResetFlags,
+          long positionUs);
 
   /**
    * Discards buffered media up to the specified position.

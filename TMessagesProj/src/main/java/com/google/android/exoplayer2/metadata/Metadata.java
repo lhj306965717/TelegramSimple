@@ -73,7 +73,7 @@ public final class Metadata implements Parcelable {
   }
 
   /* package */ Metadata(Parcel in) {
-    entries = new Metadata.Entry[in.readInt()];
+    entries = new Entry[in.readInt()];
     for (int i = 0; i < entries.length; i++) {
       entries[i] = in.readParcelable(Entry.class.getClassLoader());
     }
@@ -92,7 +92,7 @@ public final class Metadata implements Parcelable {
    * @param index The index of the entry.
    * @return The entry at the specified index.
    */
-  public Metadata.Entry get(int index) {
+  public Entry get(int index) {
     return entries[index];
   }
 
@@ -160,8 +160,8 @@ public final class Metadata implements Parcelable {
     }
   }
 
-  public static final Parcelable.Creator<Metadata> CREATOR =
-      new Parcelable.Creator<Metadata>() {
+  public static final Creator<Metadata> CREATOR =
+      new Creator<Metadata>() {
         @Override
         public Metadata createFromParcel(Parcel in) {
           return new Metadata(in);

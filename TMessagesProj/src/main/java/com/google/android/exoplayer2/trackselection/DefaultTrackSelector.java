@@ -1353,8 +1353,8 @@ public class DefaultTrackSelector extends MappingTrackSelector {
       dest.writeInt(data);
     }
 
-    public static final Parcelable.Creator<SelectionOverride> CREATOR =
-        new Parcelable.Creator<SelectionOverride>() {
+    public static final Creator<SelectionOverride> CREATOR =
+        new Creator<SelectionOverride>() {
 
           @Override
           public SelectionOverride createFromParcel(Parcel in) {

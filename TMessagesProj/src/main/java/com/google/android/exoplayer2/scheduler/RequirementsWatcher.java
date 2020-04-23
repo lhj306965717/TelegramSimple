@@ -49,8 +49,8 @@ public final class RequirementsWatcher {
      *     met, or 0.
      */
     void onRequirementsStateChanged(
-        RequirementsWatcher requirementsWatcher,
-        @Requirements.RequirementFlags int notMetRequirements);
+            RequirementsWatcher requirementsWatcher,
+            @Requirements.RequirementFlags int notMetRequirements);
   }
 
   private final Context context;

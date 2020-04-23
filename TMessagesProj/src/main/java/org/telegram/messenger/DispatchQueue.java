@@ -17,6 +17,7 @@ import java.util.concurrent.CountDownLatch;
 public class DispatchQueue extends Thread {
 
     private volatile Handler handler = null;
+    // 倒计时 计时器
     private CountDownLatch syncLatch = new CountDownLatch(1);
 
     public DispatchQueue(final String threadName) {
@@ -98,7 +99,7 @@ public class DispatchQueue extends Thread {
             @Override
             public void handleMessage(Message msg) {
                 DispatchQueue.this.handleMessage(msg);
-            }
+        }
         };
         syncLatch.countDown();
         Looper.loop();

@@ -37,7 +37,7 @@ public final class ClippingMediaPeriod implements MediaPeriod, MediaPeriod.Callb
    */
   public final MediaPeriod mediaPeriod;
 
-  private MediaPeriod.Callback callback;
+  private Callback callback;
   private ClippingSampleStream[] sampleStreams;
   private long pendingInitialDiscontinuityPositionUs;
   /* package */ long startUs;
@@ -79,7 +79,7 @@ public final class ClippingMediaPeriod implements MediaPeriod, MediaPeriod.Callb
   }
 
   @Override
-  public void prepare(MediaPeriod.Callback callback, long positionUs) {
+  public void prepare(Callback callback, long positionUs) {
     this.callback = callback;
     mediaPeriod.prepare(this, positionUs);
   }

@@ -56,7 +56,7 @@ public interface MediaCodecSelector {
    * @throws DecoderQueryException Thrown if there was an error querying decoders.
    */
   List<MediaCodecInfo> getDecoderInfos(
-      String mimeType, boolean requiresSecureDecoder, boolean requiresTunnelingDecoder)
+          String mimeType, boolean requiresSecureDecoder, boolean requiresTunnelingDecoder)
       throws DecoderQueryException;
 
   /**

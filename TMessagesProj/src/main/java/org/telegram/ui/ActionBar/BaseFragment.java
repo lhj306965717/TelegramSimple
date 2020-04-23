@@ -485,22 +485,47 @@ public class BaseFragment {
         return AccountInstance.getInstance(currentAccount);
     }
 
+    /**
+     * 消息控制器
+     *
+     * @return
+     */
     public MessagesController getMessagesController() {
         return getAccountInstance().getMessagesController();
     }
 
+    /**
+     * 联系人
+     *
+     * @return
+     */
     protected ContactsController getContactsController() {
         return getAccountInstance().getContactsController();
     }
 
+    /**
+     * 多媒体
+     *
+     * @return
+     */
     public MediaDataController getMediaDataController() {
         return getAccountInstance().getMediaDataController();
     }
 
+    /**
+     * 连接管理器
+     *
+     * @return
+     */
     public ConnectionsManager getConnectionsManager() {
         return getAccountInstance().getConnectionsManager();
     }
 
+    /**
+     * 定位
+     *
+     * @return
+     */
     protected LocationController getLocationController() {
         return getAccountInstance().getLocationController();
     }
@@ -509,10 +534,19 @@ public class BaseFragment {
         return getAccountInstance().getNotificationsController();
     }
 
+    /**
+     * 消息存储
+     *
+     * @return
+     */
     protected MessagesStorage getMessagesStorage() {
         return getAccountInstance().getMessagesStorage();
     }
 
+    /**
+     * 发送消息帮助类
+     * @return
+     */
     public SendMessagesHelper getSendMessagesHelper() {
         return getAccountInstance().getSendMessagesHelper();
     }

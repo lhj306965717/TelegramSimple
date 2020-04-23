@@ -257,7 +257,7 @@ public interface MediaSource {
    *     and other data.
    */
   void prepareSource(
-      SourceInfoRefreshListener listener, @Nullable TransferListener mediaTransferListener);
+          SourceInfoRefreshListener listener, @Nullable TransferListener mediaTransferListener);
 
   /**
    * Throws any pending error encountered while loading or refreshing source information.

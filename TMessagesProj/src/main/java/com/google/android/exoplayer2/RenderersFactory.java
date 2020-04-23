@@ -41,10 +41,10 @@ public interface RenderersFactory {
    * @return The {@link Renderer instances}.
    */
   Renderer[] createRenderers(
-      Handler eventHandler,
-      VideoRendererEventListener videoRendererEventListener,
-      AudioRendererEventListener audioRendererEventListener,
-      TextOutput textRendererOutput,
-      MetadataOutput metadataRendererOutput,
-      @Nullable DrmSessionManager<FrameworkMediaCrypto> drmSessionManager);
+          Handler eventHandler,
+          VideoRendererEventListener videoRendererEventListener,
+          AudioRendererEventListener audioRendererEventListener,
+          TextOutput textRendererOutput,
+          MetadataOutput metadataRendererOutput,
+          @Nullable DrmSessionManager<FrameworkMediaCrypto> drmSessionManager);
 }

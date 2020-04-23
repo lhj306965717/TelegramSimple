@@ -28,9 +28,13 @@ public class Utilities {
     public static Pattern pattern = Pattern.compile("[\\-0-9]+");
     public static SecureRandom random = new SecureRandom();
 
+    // 阶段队列
     public static volatile DispatchQueue stageQueue = new DispatchQueue("stageQueue");
+    // 全局队列
     public static volatile DispatchQueue globalQueue = new DispatchQueue("globalQueue");
+    // 搜索队列
     public static volatile DispatchQueue searchQueue = new DispatchQueue("searchQueue");
+    // 电话薄队列
     public static volatile DispatchQueue phoneBookQueue = new DispatchQueue("phoneBookQueue");
 
     final protected static char[] hexArray = "0123456789ABCDEF".toCharArray();
@@ -49,23 +53,41 @@ public class Utilities {
     }
 
     public native static int pinBitmap(Bitmap bitmap);
+
     public native static void unpinBitmap(Bitmap bitmap);
+
     public native static void blurBitmap(Object bitmap, int radius, int unpin, int width, int height, int stride);
+
     public native static int needInvert(Object bitmap, int unpin, int width, int height, int stride);
+
     public native static void calcCDT(ByteBuffer hsvBuffer, int width, int height, ByteBuffer buffer);
+
     public native static boolean loadWebpImage(Bitmap bitmap, ByteBuffer buffer, int len, BitmapFactory.Options options, boolean unpin);
+
     public native static int convertVideoFrame(ByteBuffer src, ByteBuffer dest, int destFormat, int width, int height, int padding, int swap);
+
     private native static void aesIgeEncryption(ByteBuffer buffer, byte[] key, byte[] iv, boolean encrypt, int offset, int length);
+
     private native static void aesIgeEncryptionByteArray(byte[] buffer, byte[] key, byte[] iv, boolean encrypt, int offset, int length);
+
     public native static void aesCtrDecryption(ByteBuffer buffer, byte[] key, byte[] iv, int offset, int length);
+
     public native static void aesCtrDecryptionByteArray(byte[] buffer, byte[] key, byte[] iv, int offset, int length, int n);
+
     private native static void aesCbcEncryptionByteArray(byte[] buffer, byte[] key, byte[] iv, int offset, int length, int n, int encrypt);
+
     public native static void aesCbcEncryption(ByteBuffer buffer, byte[] key, byte[] iv, int offset, int length, int encrypt);
+
     public native static String readlink(String path);
+
     public native static long getDirSize(String path, int docType, boolean subdirs);
+
     public native static void clearDir(String path, int docType, long time, boolean subdirs);
+
     private native static int pbkdf2(byte[] password, byte[] salt, byte[] dst, int iterations);
+
     public static native void stackBlurBitmap(Bitmap bitmap, int radius);
+
     public static native void drawDitheredGradient(Bitmap bitmap, int[] colors, int startX, int startY, int endX, int endY);
 
     public static Bitmap blurWallpaper(Bitmap src) {

@@ -99,8 +99,8 @@ public final class MdtaMetadataEntry implements Metadata.Entry {
     return 0;
   }
 
-  public static final Parcelable.Creator<MdtaMetadataEntry> CREATOR =
-      new Parcelable.Creator<MdtaMetadataEntry>() {
+  public static final Creator<MdtaMetadataEntry> CREATOR =
+      new Creator<MdtaMetadataEntry>() {
 
         @Override
         public MdtaMetadataEntry createFromParcel(Parcel in) {

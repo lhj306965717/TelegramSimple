@@ -129,8 +129,8 @@ public final class HlsTrackMetadataEntry implements Metadata.Entry {
       dest.writeString(captionGroupId);
     }
 
-    public static final Parcelable.Creator<VariantInfo> CREATOR =
-        new Parcelable.Creator<VariantInfo>() {
+    public static final Creator<VariantInfo> CREATOR =
+        new Creator<VariantInfo>() {
           @Override
           public VariantInfo createFromParcel(Parcel in) {
             return new VariantInfo(in);

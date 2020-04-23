@@ -29,7 +29,7 @@ import java.util.Map;
 import java.util.UUID;
 
 /**
- * Used to obtain keys for decrypting protected media streams. See {@link android.media.MediaDrm}.
+ * Used to obtain keys for decrypting protected media streams. See {@link MediaDrm}.
  */
 public interface ExoMediaDrm<T extends ExoMediaCrypto> {
 
@@ -66,7 +66,7 @@ public interface ExoMediaDrm<T extends ExoMediaCrypto> {
   int KEY_TYPE_RELEASE = MediaDrm.KEY_TYPE_RELEASE;
 
   /**
-   * @see android.media.MediaDrm.OnEventListener
+   * @see MediaDrm.OnEventListener
    */
   interface OnEventListener<T extends ExoMediaCrypto> {
     /**
@@ -79,15 +79,15 @@ public interface ExoMediaDrm<T extends ExoMediaCrypto> {
      * @param data Optional byte array of data that may be associated with the event.
      */
     void onEvent(
-        ExoMediaDrm<? extends T> mediaDrm,
-        @Nullable byte[] sessionId,
-        int event,
-        int extra,
-        @Nullable byte[] data);
+            ExoMediaDrm<? extends T> mediaDrm,
+            @Nullable byte[] sessionId,
+            int event,
+            int extra,
+            @Nullable byte[] data);
   }
 
   /**
-   * @see android.media.MediaDrm.OnKeyStatusChangeListener
+   * @see MediaDrm.OnKeyStatusChangeListener
    */
   interface OnKeyStatusChangeListener<T extends ExoMediaCrypto> {
     /**
@@ -100,13 +100,13 @@ public interface ExoMediaDrm<T extends ExoMediaCrypto> {
      * @param hasNewUsableKey Whether a new key became usable.
      */
     void onKeyStatusChange(
-        ExoMediaDrm<? extends T> mediaDrm,
-        byte[] sessionId,
-        List<KeyStatus> exoKeyInformation,
-        boolean hasNewUsableKey);
+            ExoMediaDrm<? extends T> mediaDrm,
+            byte[] sessionId,
+            List<KeyStatus> exoKeyInformation,
+            boolean hasNewUsableKey);
   }
 
-  /** @see android.media.MediaDrm.KeyStatus */
+  /** @see MediaDrm.KeyStatus */
   final class KeyStatus {
 
     private final int statusCode;
@@ -127,7 +127,7 @@ public interface ExoMediaDrm<T extends ExoMediaCrypto> {
 
   }
 
-  /** @see android.media.MediaDrm.KeyRequest */
+  /** @see MediaDrm.KeyRequest */
   final class KeyRequest {
 
     private final byte[] data;
@@ -148,7 +148,7 @@ public interface ExoMediaDrm<T extends ExoMediaCrypto> {
 
   }
 
-  /** @see android.media.MediaDrm.ProvisionRequest */
+  /** @see MediaDrm.ProvisionRequest */
   final class ProvisionRequest {
 
     private final byte[] data;
@@ -208,10 +208,10 @@ public interface ExoMediaDrm<T extends ExoMediaCrypto> {
    * @see MediaDrm#getKeyRequest(byte[], byte[], String, int, HashMap)
    */
   KeyRequest getKeyRequest(
-      byte[] scope,
-      @Nullable List<SchemeData> schemeDatas,
-      int keyType,
-      @Nullable HashMap<String, String> optionalParameters)
+          byte[] scope,
+          @Nullable List<SchemeData> schemeDatas,
+          int keyType,
+          @Nullable HashMap<String, String> optionalParameters)
       throws NotProvisionedException;
 
   /** @see MediaDrm#provideKeyResponse(byte[], byte[]) */

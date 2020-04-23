@@ -59,7 +59,7 @@ import java.util.List;
  *   <li>Message with type {@link C#MSG_SET_VOLUME} to set the volume. The message payload should be
  *       a {@link Float} with 0 being silence and 1 being unity gain.
  *   <li>Message with type {@link C#MSG_SET_AUDIO_ATTRIBUTES} to set the audio attributes. The
- *       message payload should be an {@link com.google.android.exoplayer2.audio.AudioAttributes}
+ *       message payload should be an {@link AudioAttributes}
  *       instance that will configure the underlying audio track.
  *   <li>Message with type {@link C#MSG_SET_AUX_EFFECT_INFO} to set the auxiliary effect. The
  *       message payload should be an {@link AuxEffectInfo} instance that will configure the
@@ -86,7 +86,7 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
   private boolean passthroughEnabled;
   private boolean codecNeedsDiscardChannelsWorkaround;
   private boolean codecNeedsEosBufferTimestampWorkaround;
-  private android.media.MediaFormat passthroughMediaFormat;
+  private MediaFormat passthroughMediaFormat;
   private @C.Encoding int pcmEncoding;
   private int channelCount;
   private int encoderDelay;

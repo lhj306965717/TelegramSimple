@@ -309,7 +309,7 @@ import java.util.Map;
     expectedPlaylistUrl = null;
 
     // Handle encryption.
-    HlsMediaPlaylist.Segment segment = mediaPlaylist.segments.get(segmentIndexInPlaylist);
+    Segment segment = mediaPlaylist.segments.get(segmentIndexInPlaylist);
 
     // Check if the segment or its initialization segment are fully encrypted.
     Uri initSegmentKeyUri = getFullEncryptionKeyUri(mediaPlaylist, segment.initializationSegment);
@@ -671,7 +671,7 @@ import java.util.Map;
     }
 
     @Override
-    protected boolean removeEldestEntry(Map.Entry<Uri, byte[]> entry) {
+    protected boolean removeEldestEntry(Entry<Uri, byte[]> entry) {
       return size() > KEY_CACHE_SIZE;
     }
   }

@@ -207,7 +207,7 @@ public final class Requirements implements Parcelable {
     dest.writeInt(requirements);
   }
 
-  public static final Parcelable.Creator<Requirements> CREATOR =
+  public static final Creator<Requirements> CREATOR =
       new Creator<Requirements>() {
 
         @Override

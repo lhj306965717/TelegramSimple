@@ -27,7 +27,7 @@ public final class DefaultDataSourceFactory implements Factory {
 
   private final Context context;
   private final @Nullable TransferListener listener;
-  private final DataSource.Factory baseDataSourceFactory;
+  private final Factory baseDataSourceFactory;
 
   /**
    * @param context A context.
@@ -53,7 +53,7 @@ public final class DefaultDataSourceFactory implements Factory {
    *     for {@link DefaultDataSource}.
    * @see DefaultDataSource#DefaultDataSource(Context, TransferListener, DataSource)
    */
-  public DefaultDataSourceFactory(Context context, DataSource.Factory baseDataSourceFactory) {
+  public DefaultDataSourceFactory(Context context, Factory baseDataSourceFactory) {
     this(context, /* listener= */ null, baseDataSourceFactory);
   }
 
@@ -67,7 +67,7 @@ public final class DefaultDataSourceFactory implements Factory {
   public DefaultDataSourceFactory(
       Context context,
       @Nullable TransferListener listener,
-      DataSource.Factory baseDataSourceFactory) {
+      Factory baseDataSourceFactory) {
     this.context = context.getApplicationContext();
     this.listener = listener;
     this.baseDataSourceFactory = baseDataSourceFactory;

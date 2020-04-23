@@ -186,7 +186,7 @@ public final class H264Reader implements ElementaryStreamReader {
           List<byte[]> initializationData = new ArrayList<>();
           initializationData.add(Arrays.copyOf(sps.nalData, sps.nalLength));
           initializationData.add(Arrays.copyOf(pps.nalData, pps.nalLength));
-          NalUnitUtil.SpsData spsData = NalUnitUtil.parseSpsNalUnit(sps.nalData, 3, sps.nalLength);
+          SpsData spsData = NalUnitUtil.parseSpsNalUnit(sps.nalData, 3, sps.nalLength);
           NalUnitUtil.PpsData ppsData = NalUnitUtil.parsePpsNalUnit(pps.nalData, 3, pps.nalLength);
           output.format(
               Format.createVideoSampleFormat(
@@ -212,7 +212,7 @@ public final class H264Reader implements ElementaryStreamReader {
           pps.reset();
         }
       } else if (sps.isCompleted()) {
-        NalUnitUtil.SpsData spsData = NalUnitUtil.parseSpsNalUnit(sps.nalData, 3, sps.nalLength);
+        SpsData spsData = NalUnitUtil.parseSpsNalUnit(sps.nalData, 3, sps.nalLength);
         sampleReader.putSps(spsData);
         sps.reset();
       } else if (pps.isCompleted()) {
@@ -250,7 +250,7 @@ public final class H264Reader implements ElementaryStreamReader {
     private final TrackOutput output;
     private final boolean allowNonIdrKeyframes;
     private final boolean detectAccessUnits;
-    private final SparseArray<NalUnitUtil.SpsData> sps;
+    private final SparseArray<SpsData> sps;
     private final SparseArray<NalUnitUtil.PpsData> pps;
     private final ParsableNalUnitBitArray bitArray;
 
@@ -289,7 +289,7 @@ public final class H264Reader implements ElementaryStreamReader {
       return detectAccessUnits;
     }
 
-    public void putSps(NalUnitUtil.SpsData spsData) {
+    public void putSps(SpsData spsData) {
       sps.append(spsData.seqParameterSetId, spsData);
     }
 
@@ -373,7 +373,7 @@ public final class H264Reader implements ElementaryStreamReader {
         return;
       }
       NalUnitUtil.PpsData ppsData = pps.get(picParameterSetId);
-      NalUnitUtil.SpsData spsData = sps.get(ppsData.seqParameterSetId);
+      SpsData spsData = sps.get(ppsData.seqParameterSetId);
       if (spsData.separateColorPlaneFlag) {
         if (!bitArray.canReadBits(2)) {
           return;

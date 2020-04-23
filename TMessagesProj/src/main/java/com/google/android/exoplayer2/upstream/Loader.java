@@ -121,7 +121,7 @@ public final class Loader implements LoaderErrorThrower {
      *     Loader#DONT_RETRY_FATAL} or a retry action created by {@link #createRetryAction}.
      */
     LoadErrorAction onLoadError(
-        T loadable, long elapsedRealtimeMs, long loadDurationMs, IOException error, int errorCount);
+            T loadable, long elapsedRealtimeMs, long loadDurationMs, IOException error, int errorCount);
   }
 
   /**

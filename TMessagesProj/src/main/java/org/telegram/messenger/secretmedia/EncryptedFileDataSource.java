@@ -93,7 +93,7 @@ public final class EncryptedFileDataSource extends BaseDataSource {
             int bytesRead;
             try {
                 bytesRead = file.read(buffer, offset, (int) Math.min(bytesRemaining, readLength));
-                Utilities.aesCtrDecryptionByteArray(buffer, key, iv, offset, bytesRead, fileOffset);
+//                Utilities.aesCtrDecryptionByteArray(buffer, key, iv, offset, bytesRead, fileOffset);
                 fileOffset += bytesRead;
             } catch (IOException e) {
                 throw new EncryptedFileDataSourceException(e);

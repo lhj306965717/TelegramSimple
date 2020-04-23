@@ -754,7 +754,7 @@ public final class C {
    * equivalent stream type using {@link Util#getStreamTypeForAudioUsage(int)}.
    *
    * <p>To get audio attributes that are equivalent to a legacy stream type, pass the stream type to
-   * {@link Util#getAudioUsageForStreamType(int)} and use the returned {@link C.AudioUsage} to build
+   * {@link Util#getAudioUsageForStreamType(int)} and use the returned {@link AudioUsage} to build
    * an audio attributes instance.
    */
   public static final int MSG_SET_AUDIO_ATTRIBUTES = 3;
@@ -762,7 +762,7 @@ public final class C {
   /**
    * The type of a message that can be passed to a {@link MediaCodec}-based video {@link Renderer}
    * via {@link ExoPlayer#createMessage(Target)}. The message payload should be one of the integer
-   * scaling modes in {@link C.VideoScalingMode}.
+   * scaling modes in {@link VideoScalingMode}.
    *
    * <p>Note that the scaling mode only applies if the {@link Surface} targeted by the renderer is
    * owned by a {@link android.view.SurfaceView}.

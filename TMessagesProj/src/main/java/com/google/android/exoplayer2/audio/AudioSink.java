@@ -204,13 +204,13 @@ public interface AudioSink {
    * @throws ConfigurationException If an error occurs configuring the sink.
    */
   void configure(
-      @C.Encoding int inputEncoding,
-      int inputChannelCount,
-      int inputSampleRate,
-      int specifiedBufferSize,
-      @Nullable int[] outputChannels,
-      int trimStartFrames,
-      int trimEndFrames)
+          @C.Encoding int inputEncoding,
+          int inputChannelCount,
+          int inputSampleRate,
+          int specifiedBufferSize,
+          @Nullable int[] outputChannels,
+          int trimStartFrames,
+          int trimEndFrames)
       throws ConfigurationException;
 
   /**

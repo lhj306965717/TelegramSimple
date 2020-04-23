@@ -861,7 +861,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
    *
    * @param earlyUs The time until the buffer should be presented in microseconds. A negative value
    *     indicates that the buffer is late.
-   * @param elapsedRealtimeUs {@link android.os.SystemClock#elapsedRealtime()} in microseconds,
+   * @param elapsedRealtimeUs {@link SystemClock#elapsedRealtime()} in microseconds,
    *     measured at the start of the current iteration of the rendering loop.
    * @param isLastBuffer Whether the buffer is the last buffer in the current stream.
    */
@@ -876,7 +876,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
    *
    * @param earlyUs The time until the current buffer should be presented in microseconds. A
    *     negative value indicates that the buffer is late.
-   * @param elapsedRealtimeUs {@link android.os.SystemClock#elapsedRealtime()} in microseconds,
+   * @param elapsedRealtimeUs {@link SystemClock#elapsedRealtime()} in microseconds,
    *     measured at the start of the current iteration of the rendering loop.
    * @param isLastBuffer Whether the buffer is the last buffer in the current stream.
    */

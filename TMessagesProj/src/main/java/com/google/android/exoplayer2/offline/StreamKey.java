@@ -117,8 +117,8 @@ public final class StreamKey implements Comparable<StreamKey>, Parcelable {
     dest.writeInt(trackIndex);
   }
 
-  public static final Parcelable.Creator<StreamKey> CREATOR =
-      new Parcelable.Creator<StreamKey>() {
+  public static final Creator<StreamKey> CREATOR =
+      new Creator<StreamKey>() {
 
         @Override
         public StreamKey createFromParcel(Parcel in) {

@@ -139,9 +139,9 @@ public interface TrackOutput {
    * @param encryptionData The encryption data required to decrypt the sample. May be null.
    */
   void sampleMetadata(
-      long timeUs,
-      @C.BufferFlags int flags,
-      int size,
-      int offset,
-      @Nullable CryptoData encryptionData);
+          long timeUs,
+          @C.BufferFlags int flags,
+          int size,
+          int offset,
+          @Nullable CryptoData encryptionData);
 }

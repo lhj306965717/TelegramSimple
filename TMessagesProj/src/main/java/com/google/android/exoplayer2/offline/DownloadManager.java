@@ -107,9 +107,9 @@ public final class DownloadManager {
      *     met, or 0.
      */
     default void onRequirementsStateChanged(
-        DownloadManager downloadManager,
-        Requirements requirements,
-        @Requirements.RequirementFlags int notMetRequirements) {}
+            DownloadManager downloadManager,
+            Requirements requirements,
+            @Requirements.RequirementFlags int notMetRequirements) {}
   }
 
   /** The default maximum number of parallel downloads. */

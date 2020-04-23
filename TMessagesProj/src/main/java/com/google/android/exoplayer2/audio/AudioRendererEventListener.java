@@ -54,7 +54,7 @@ public interface AudioRendererEventListener {
    * @param initializationDurationMs The time taken to initialize the decoder in milliseconds.
    */
   default void onAudioDecoderInitialized(
-      String decoderName, long initializedTimestampMs, long initializationDurationMs) {}
+          String decoderName, long initializedTimestampMs, long initializationDurationMs) {}
 
   /**
    * Called when the format of the media being consumed by the renderer changes.
@@ -73,7 +73,7 @@ public interface AudioRendererEventListener {
    * @param elapsedSinceLastFeedMs The time since the {@link AudioSink} was last fed data.
    */
   default void onAudioSinkUnderrun(
-      int bufferSize, long bufferSizeMs, long elapsedSinceLastFeedMs) {}
+          int bufferSize, long bufferSizeMs, long elapsedSinceLastFeedMs) {}
 
   /**
    * Called when the renderer is disabled.

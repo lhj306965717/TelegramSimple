@@ -36,13 +36,13 @@ public final class AuxEffectInfo {
   /**
    * The identifier of the effect, or {@link #NO_AUX_EFFECT_ID} if there is no effect.
    *
-   * @see android.media.AudioTrack#attachAuxEffect(int)
+   * @see AudioTrack#attachAuxEffect(int)
    */
   public final int effectId;
   /**
    * The send level for the effect.
    *
-   * @see android.media.AudioTrack#setAuxEffectSendLevel(float)
+   * @see AudioTrack#setAuxEffectSendLevel(float)
    */
   public final float sendLevel;
 

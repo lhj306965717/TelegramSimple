@@ -98,7 +98,7 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
   /**
    * @param userAgent The User-Agent string that should be used.
    * @param contentTypePredicate An optional {@link Predicate}. If a content type is rejected by the
-   *     predicate then a {@link HttpDataSource.InvalidContentTypeException} is thrown from {@link
+   *     predicate then a {@link InvalidContentTypeException} is thrown from {@link
    *     #open(DataSpec)}.
    */
   public DefaultHttpDataSource(String userAgent, @Nullable Predicate<String> contentTypePredicate) {
@@ -112,7 +112,7 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
   /**
    * @param userAgent The User-Agent string that should be used.
    * @param contentTypePredicate An optional {@link Predicate}. If a content type is rejected by the
-   *     predicate then a {@link HttpDataSource.InvalidContentTypeException} is thrown from {@link
+   *     predicate then a {@link InvalidContentTypeException} is thrown from {@link
    *     #open(DataSpec)}.
    * @param connectTimeoutMillis The connection timeout, in milliseconds. A timeout of zero is
    *     interpreted as an infinite timeout.
@@ -136,7 +136,7 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
   /**
    * @param userAgent The User-Agent string that should be used.
    * @param contentTypePredicate An optional {@link Predicate}. If a content type is rejected by the
-   *     predicate then a {@link HttpDataSource.InvalidContentTypeException} is thrown from {@link
+   *     predicate then a {@link InvalidContentTypeException} is thrown from {@link
    *     #open(DataSpec)}.
    * @param connectTimeoutMillis The connection timeout, in milliseconds. A timeout of zero is
    *     interpreted as an infinite timeout. Pass {@link #DEFAULT_CONNECT_TIMEOUT_MILLIS} to use the
@@ -168,7 +168,7 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
   /**
    * @param userAgent The User-Agent string that should be used.
    * @param contentTypePredicate An optional {@link Predicate}. If a content type is rejected by the
-   *     predicate then a {@link HttpDataSource.InvalidContentTypeException} is thrown from {@link
+   *     predicate then a {@link InvalidContentTypeException} is thrown from {@link
    *     #open(DataSpec)}.
    * @param listener An optional listener.
    * @deprecated Use {@link #DefaultHttpDataSource(String, Predicate)} and {@link
@@ -187,7 +187,7 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
   /**
    * @param userAgent The User-Agent string that should be used.
    * @param contentTypePredicate An optional {@link Predicate}. If a content type is rejected by the
-   *     predicate then a {@link HttpDataSource.InvalidContentTypeException} is thrown from {@link
+   *     predicate then a {@link InvalidContentTypeException} is thrown from {@link
    *     #open(DataSpec)}.
    * @param listener An optional listener.
    * @param connectTimeoutMillis The connection timeout, in milliseconds. A timeout of zero is
@@ -212,7 +212,7 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
   /**
    * @param userAgent The User-Agent string that should be used.
    * @param contentTypePredicate An optional {@link Predicate}. If a content type is rejected by the
-   *     predicate then a {@link HttpDataSource.InvalidContentTypeException} is thrown from {@link
+   *     predicate then a {@link InvalidContentTypeException} is thrown from {@link
    *     #open(DataSpec)}.
    * @param listener An optional listener.
    * @param connectTimeoutMillis The connection timeout, in milliseconds. A timeout of zero is

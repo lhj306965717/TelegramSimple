@@ -89,7 +89,7 @@ public final class DashUtil {
    *
    * @param dataSource The source from which the data should be loaded.
    * @param trackType The type of the representation. Typically one of the {@link
-   *     com.google.android.exoplayer2.C} {@code TRACK_TYPE_*} constants.
+   *     C} {@code TRACK_TYPE_*} constants.
    * @param representation The representation which initialization chunk belongs to.
    * @return the sample {@link Format} of the given representation.
    * @throws IOException Thrown when there is an error while loading.
@@ -109,7 +109,7 @@ public final class DashUtil {
    *
    * @param dataSource The source from which the data should be loaded.
    * @param trackType The type of the representation. Typically one of the {@link
-   *     com.google.android.exoplayer2.C} {@code TRACK_TYPE_*} constants.
+   *     C} {@code TRACK_TYPE_*} constants.
    * @param representation The representation which initialization chunk belongs to.
    * @return The {@link ChunkIndex} of the given representation, or null if no initialization or
    *     index data exists.
@@ -130,7 +130,7 @@ public final class DashUtil {
    *
    * @param dataSource The source from which the data should be loaded.
    * @param trackType The type of the representation. Typically one of the {@link
-   *     com.google.android.exoplayer2.C} {@code TRACK_TYPE_*} constants.
+   *     C} {@code TRACK_TYPE_*} constants.
    * @param representation The representation which initialization chunk belongs to.
    * @param loadIndex Whether to load index data too.
    * @return A {@link ChunkExtractorWrapper} for the {@code representation}, or null if no

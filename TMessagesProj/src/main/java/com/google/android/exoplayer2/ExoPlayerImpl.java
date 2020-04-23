@@ -179,12 +179,12 @@ import java.util.concurrent.CopyOnWriteArrayList;
   }
 
   @Override
-  public void addListener(Player.EventListener listener) {
+  public void addListener(EventListener listener) {
     listeners.addIfAbsent(new ListenerHolder(listener));
   }
 
   @Override
-  public void removeListener(Player.EventListener listener) {
+  public void removeListener(EventListener listener) {
     for (ListenerHolder listenerHolder : listeners) {
       if (listenerHolder.listener.equals(listener)) {
         listenerHolder.release();
@@ -666,7 +666,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
         maskingWindowIndex = 0;
         maskingWindowPositionMs = 0;
       }
-      @Player.TimelineChangeReason
+      @TimelineChangeReason
       int timelineChangeReason =
           hasPendingPrepare
               ? Player.TIMELINE_CHANGE_REASON_PREPARED
@@ -721,8 +721,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
   private void updatePlaybackInfo(
       PlaybackInfo playbackInfo,
       boolean positionDiscontinuity,
-      @Player.DiscontinuityReason int positionDiscontinuityReason,
-      @Player.TimelineChangeReason int timelineChangeReason,
+      @DiscontinuityReason int positionDiscontinuityReason,
+      @TimelineChangeReason int timelineChangeReason,
       boolean seekProcessed) {
     boolean previousIsPlaying = isPlaying();
     // Assign playback info immediately such that all getters return the right values.
@@ -777,8 +777,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
     private final CopyOnWriteArrayList<ListenerHolder> listenerSnapshot;
     private final TrackSelector trackSelector;
     private final boolean positionDiscontinuity;
-    private final @Player.DiscontinuityReason int positionDiscontinuityReason;
-    private final @Player.TimelineChangeReason int timelineChangeReason;
+    private final @DiscontinuityReason int positionDiscontinuityReason;
+    private final @TimelineChangeReason int timelineChangeReason;
     private final boolean seekProcessed;
     private final boolean playbackStateChanged;
     private final boolean timelineOrManifestChanged;

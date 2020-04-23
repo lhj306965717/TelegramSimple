@@ -86,7 +86,7 @@ public final class FrameworkMediaDrm implements ExoMediaDrm<FrameworkMediaCrypto
 
   @Override
   public void setOnEventListener(
-      final ExoMediaDrm.OnEventListener<? super FrameworkMediaCrypto> listener) {
+      final OnEventListener<? super FrameworkMediaCrypto> listener) {
     mediaDrm.setOnEventListener(
         listener == null
             ? null
@@ -96,7 +96,7 @@ public final class FrameworkMediaDrm implements ExoMediaDrm<FrameworkMediaCrypto
 
   @Override
   public void setOnKeyStatusChangeListener(
-      final ExoMediaDrm.OnKeyStatusChangeListener<? super FrameworkMediaCrypto> listener) {
+      final OnKeyStatusChangeListener<? super FrameworkMediaCrypto> listener) {
     if (Util.SDK_INT < 23) {
       throw new UnsupportedOperationException();
     }
@@ -128,7 +128,7 @@ public final class FrameworkMediaDrm implements ExoMediaDrm<FrameworkMediaCrypto
   @Override
   public KeyRequest getKeyRequest(
       byte[] scope,
-      @Nullable List<DrmInitData.SchemeData> schemeDatas,
+      @Nullable List<SchemeData> schemeDatas,
       int keyType,
       @Nullable HashMap<String, String> optionalParameters)
       throws NotProvisionedException {

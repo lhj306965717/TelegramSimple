@@ -131,7 +131,7 @@ public interface AnalyticsListener {
    * @param playbackState One of the {@link Player}.STATE constants.
    */
   default void onPlayerStateChanged(
-      EventTime eventTime, boolean playWhenReady, int playbackState) {}
+          EventTime eventTime, boolean playWhenReady, int playbackState) {}
 
   /**
    * Called when playback suppression reason changed.
@@ -140,7 +140,7 @@ public interface AnalyticsListener {
    * @param playbackSuppressionReason The new {@link PlaybackSuppressionReason}.
    */
   default void onPlaybackSuppressionReasonChanged(
-      EventTime eventTime, @PlaybackSuppressionReason int playbackSuppressionReason) {}
+          EventTime eventTime, @PlaybackSuppressionReason int playbackSuppressionReason) {}
 
   /**
    * Called when the player starts or stops playing.
@@ -187,7 +187,7 @@ public interface AnalyticsListener {
    * @param playbackParameters The new playback parameters.
    */
   default void onPlaybackParametersChanged(
-      EventTime eventTime, PlaybackParameters playbackParameters) {}
+          EventTime eventTime, PlaybackParameters playbackParameters) {}
 
   /**
    * Called when the repeat mode changed.
@@ -229,7 +229,7 @@ public interface AnalyticsListener {
    * @param trackSelections The track selections for each renderer. May contain null elements.
    */
   default void onTracksChanged(
-      EventTime eventTime, TrackGroupArray trackGroups, TrackSelectionArray trackSelections) {}
+          EventTime eventTime, TrackGroupArray trackGroups, TrackSelectionArray trackSelections) {}
 
   /**
    * Called when a media source started loading data.
@@ -239,7 +239,7 @@ public interface AnalyticsListener {
    * @param mediaLoadData The {@link MediaLoadData} defining the data being loaded.
    */
   default void onLoadStarted(
-      EventTime eventTime, LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData) {}
+          EventTime eventTime, LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData) {}
 
   /**
    * Called when a media source completed loading data.
@@ -249,7 +249,7 @@ public interface AnalyticsListener {
    * @param mediaLoadData The {@link MediaLoadData} defining the data being loaded.
    */
   default void onLoadCompleted(
-      EventTime eventTime, LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData) {}
+          EventTime eventTime, LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData) {}
 
   /**
    * Called when a media source canceled loading data.
@@ -259,7 +259,7 @@ public interface AnalyticsListener {
    * @param mediaLoadData The {@link MediaLoadData} defining the data being loaded.
    */
   default void onLoadCanceled(
-      EventTime eventTime, LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData) {}
+          EventTime eventTime, LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData) {}
 
   /**
    * Called when a media source loading error occurred. These errors are just for informational
@@ -272,11 +272,11 @@ public interface AnalyticsListener {
    * @param wasCanceled Whether the load was canceled as a result of the error.
    */
   default void onLoadError(
-      EventTime eventTime,
-      LoadEventInfo loadEventInfo,
-      MediaLoadData mediaLoadData,
-      IOException error,
-      boolean wasCanceled) {}
+          EventTime eventTime,
+          LoadEventInfo loadEventInfo,
+          MediaLoadData mediaLoadData,
+          IOException error,
+          boolean wasCanceled) {}
 
   /**
    * Called when the downstream format sent to the renderers changed.
@@ -325,7 +325,7 @@ public interface AnalyticsListener {
    * @param bitrateEstimate The bandwidth estimate, in bits per second.
    */
   default void onBandwidthEstimate(
-      EventTime eventTime, int totalLoadTimeMs, long totalBytesLoaded, long bitrateEstimate) {}
+          EventTime eventTime, int totalLoadTimeMs, long totalBytesLoaded, long bitrateEstimate) {}
 
   /**
    * Called when the output surface size changed.
@@ -355,7 +355,7 @@ public interface AnalyticsListener {
    * @param decoderCounters The accumulated event counters associated with this decoder.
    */
   default void onDecoderEnabled(
-      EventTime eventTime, int trackType, DecoderCounters decoderCounters) {}
+          EventTime eventTime, int trackType, DecoderCounters decoderCounters) {}
 
   /**
    * Called when an audio or video decoder has been initialized.
@@ -367,7 +367,7 @@ public interface AnalyticsListener {
    * @param initializationDurationMs Time taken to initialize the decoder, in milliseconds.
    */
   default void onDecoderInitialized(
-      EventTime eventTime, int trackType, String decoderName, long initializationDurationMs) {}
+          EventTime eventTime, int trackType, String decoderName, long initializationDurationMs) {}
 
   /**
    * Called when an audio or video decoder input format changed.
@@ -388,7 +388,7 @@ public interface AnalyticsListener {
    * @param decoderCounters The accumulated event counters associated with this decoder.
    */
   default void onDecoderDisabled(
-      EventTime eventTime, int trackType, DecoderCounters decoderCounters) {}
+          EventTime eventTime, int trackType, DecoderCounters decoderCounters) {}
 
   /**
    * Called when the audio session id is set.
@@ -425,7 +425,7 @@ public interface AnalyticsListener {
    * @param elapsedSinceLastFeedMs The time since the {@link AudioSink} was last fed data.
    */
   default void onAudioUnderrun(
-      EventTime eventTime, int bufferSize, long bufferSizeMs, long elapsedSinceLastFeedMs) {}
+          EventTime eventTime, int bufferSize, long bufferSizeMs, long elapsedSinceLastFeedMs) {}
 
   /**
    * Called after video frames have been dropped.
@@ -452,11 +452,11 @@ public interface AnalyticsListener {
    * @param pixelWidthHeightRatio The width to height ratio of each pixel.
    */
   default void onVideoSizeChanged(
-      EventTime eventTime,
-      int width,
-      int height,
-      int unappliedRotationDegrees,
-      float pixelWidthHeightRatio) {}
+          EventTime eventTime,
+          int width,
+          int height,
+          int unappliedRotationDegrees,
+          float pixelWidthHeightRatio) {}
 
   /**
    * Called when a frame is rendered for the first time since setting the surface, and when a frame

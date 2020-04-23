@@ -37,7 +37,7 @@ public interface VideoListener {
    *     content.
    */
   default void onVideoSizeChanged(
-      int width, int height, int unappliedRotationDegrees, float pixelWidthHeightRatio) {}
+          int width, int height, int unappliedRotationDegrees, float pixelWidthHeightRatio) {}
 
   /**
    * Called each time there's a change in the size of the surface onto which the video is being

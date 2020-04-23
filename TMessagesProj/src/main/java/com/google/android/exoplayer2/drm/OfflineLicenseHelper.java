@@ -91,7 +91,7 @@ public final class OfflineLicenseHelper<T extends ExoMediaCrypto> {
    * @return A new instance which uses Widevine CDM.
    * @throws UnsupportedDrmException If the Widevine DRM scheme is unsupported or cannot be
    *     instantiated.
-   * @see DefaultDrmSessionManager#DefaultDrmSessionManager(java.util.UUID, ExoMediaDrm,
+   * @see DefaultDrmSessionManager#DefaultDrmSessionManager(UUID, ExoMediaDrm,
    *     MediaDrmCallback, HashMap)
    */
   public static OfflineLicenseHelper<FrameworkMediaCrypto> newWidevineInstance(
@@ -114,7 +114,7 @@ public final class OfflineLicenseHelper<T extends ExoMediaCrypto> {
    * @param callback Performs key and provisioning requests.
    * @param optionalKeyRequestParameters An optional map of parameters to pass as the last argument
    *     to {@link MediaDrm#getKeyRequest(byte[], byte[], String, int, HashMap)}. May be null.
-   * @see DefaultDrmSessionManager#DefaultDrmSessionManager(java.util.UUID, ExoMediaDrm,
+   * @see DefaultDrmSessionManager#DefaultDrmSessionManager(UUID, ExoMediaDrm,
    *     MediaDrmCallback, HashMap)
    */
   public OfflineLicenseHelper(

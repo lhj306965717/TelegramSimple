@@ -331,7 +331,7 @@ import org.checkerframework.checker.nullness.compatqual.NullableType;
 
   /**
    * Returns an id which isn't used in the given array. If the maximum id in the array is smaller
-   * than {@link java.lang.Integer#MAX_VALUE} it just returns the next bigger integer. Otherwise it
+   * than {@link Integer#MAX_VALUE} it just returns the next bigger integer. Otherwise it
    * returns the smallest unused non-negative integer.
    */
   @VisibleForTesting

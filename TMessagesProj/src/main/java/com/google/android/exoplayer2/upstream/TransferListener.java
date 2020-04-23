@@ -64,7 +64,7 @@ public interface TransferListener {
    * @param bytesTransferred The number of bytes transferred since the previous call to this method
    */
   void onBytesTransferred(
-      DataSource source, DataSpec dataSpec, boolean isNetwork, int bytesTransferred);
+          DataSource source, DataSpec dataSpec, boolean isNetwork, int bytesTransferred);
 
   /**
    * Called when a transfer ends.

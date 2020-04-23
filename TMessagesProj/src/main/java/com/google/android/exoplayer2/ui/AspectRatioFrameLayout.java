@@ -43,7 +43,7 @@ public class AspectRatioFrameLayout extends FrameLayout {
      *     changing the resize mode to have an effect.
      */
     void onAspectRatioUpdated(
-        float targetAspectRatio, float naturalAspectRatio, boolean aspectRatioMismatch);
+            float targetAspectRatio, float naturalAspectRatio, boolean aspectRatioMismatch);
   }
 
   // LINT.IfChange

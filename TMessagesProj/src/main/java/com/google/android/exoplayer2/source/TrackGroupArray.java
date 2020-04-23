@@ -125,8 +125,8 @@ public final class TrackGroupArray implements Parcelable {
     }
   }
 
-  public static final Parcelable.Creator<TrackGroupArray> CREATOR =
-      new Parcelable.Creator<TrackGroupArray>() {
+  public static final Creator<TrackGroupArray> CREATOR =
+      new Creator<TrackGroupArray>() {
 
         @Override
         public TrackGroupArray createFromParcel(Parcel in) {
